@@ -13,10 +13,16 @@
   $secondName = readline('Введите фамилию: ');
   $fatherName = readline(prompt: 'Введите отчество: ');
 
-  // преобразует первый символ строки в верхний регистр, используем встроенную функцию mb_ucfirst.
-  $firstName = mb_ucfirst($firstName, "utf-8");
-  $secondName = mb_ucfirst($secondName, "utf-8");
-  $fatherName = mb_ucfirst($fatherName, "utf-8");
+  // // преобразует первый символ строки в верхний регистр, используем встроенную функцию mb_ucfirst.
+  // $firstName = mb_ucfirst($firstName, "utf-8");
+  // $secondName = mb_ucfirst($secondName, "utf-8");
+  // $fatherName = mb_ucfirst($fatherName, "utf-8");
+
+  // преобразует первый символ строки в верхний регистр, используем встроенную функцию mb_convert_case.
+  $firstName = mb_convert_case($firstName, MB_CASE_TITLE_SIMPLE , "utf-8");
+  $secondName = mb_convert_case($secondName, MB_CASE_TITLE_SIMPLE , "utf-8");
+  $fatherName = mb_convert_case($fatherName, MB_CASE_TITLE_SIMPLE , "utf-8");
+
 
   $fullname = $secondName . ' ' . $firstName . ' ' . $fatherName;
 
